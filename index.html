@@ -126,7 +126,7 @@ table.heat tbody tr:hover td{background-color:rgba(255,255,255,.02)}
 <div id="t-val"><div class="g2">
 <div style="display:flex;flex-direction:column;gap:6px">
 <div class="cd"><div class="ct" style="color:var(--ac)">WACC</div>
-<div class="sg"><div class="sr"><span class="sl">Rf</span><span class="sv" id="v-rf"></span></div><input type="range" id="s-rf" min=".02" max=".06" step=".001" value=".048" oninput="u()"></div>
+<div class="sg"><div class="sr"><span class="sl">Rf</span><span class="sv" id="v-rf"></span></div><input type="range" id="s-rf" min=".02" max=".06" step=".001" value=".045" oninput="u()"></div>
 <div class="sg"><div class="sr"><span class="sl">ERP</span><span class="sv" id="v-erp"></span></div><input type="range" id="s-erp" min=".03" max=".07" step=".001" value=".042" oninput="u()"></div>
 <div class="sg"><div class="sr"><span class="sl" data-es="Riesgo País" data-pt="Risco País">Riesgo País</span><span class="sv" id="v-crp"></span></div><input type="range" id="s-crp" min=".03" max=".15" step=".001" value=".063" oninput="u()"></div>
 <div class="sg"><div class="sr"><span class="sl">βu</span><span class="sv" id="v-bu"></span></div><input type="range" id="s-bu" min=".6" max="1.5" step=".01" value="1.01" oninput="u()"></div>
@@ -135,8 +135,8 @@ table.heat tbody tr:hover td{background-color:rgba(255,255,255,.02)}
 <div class="sg"><div class="sr"><span class="sl">Spread Kd</span><span class="sv" id="v-sp2"></span></div><input type="range" id="s-sp2" min=".02" max=".10" step=".005" value=".04" oninput="u()"></div>
 </div>
 <div class="cd"><div class="ct" style="color:var(--gn)" data-es="DCF (XNPV) & MÚLTIPLOS" data-pt="DCF (XNPV) & MÚLTIPLOS">DCF (XNPV) & MÚLTIPLOS</div>
-<div class="sg"><div class="sr"><span class="sl" data-es="Múlt EBITDA" data-pt="Múlt EBITDA">Múlt EBITDA</span><span class="sv" id="v-me"></span></div><input type="range" id="s-me" min="6" max="20" step="1" value="12" oninput="u()"></div>
-<div class="sg"><div class="sr"><span class="sl" data-es="Múlt Revenue" data-pt="Múlt Receita">Múlt Revenue</span><span class="sv" id="v-mr"></span></div><input type="range" id="s-mr" min="1" max="5" step=".5" value="3" oninput="u()"></div>
+<div class="sg"><div class="sr"><span class="sl" data-es="Múlt EBITDA" data-pt="Múlt EBITDA">Múlt EBITDA</span><span class="sv" id="v-me"></span></div><input type="range" id="s-me" min="6" max="20" step="1" value="13" oninput="u()"></div>
+<div class="sg"><div class="sr"><span class="sl" data-es="Múlt Revenue" data-pt="Múlt Receita">Múlt Revenue</span><span class="sv" id="v-mr"></span></div><input type="range" id="s-mr" min="1" max="5" step=".5" value="2" oninput="u()"></div>
 </div>
 <div class="cd"><div class="ct" style="color:var(--or)" data-es="PONDERACIÓN" data-pt="PONDERAÇÃO">PONDERACIÓN</div>
 <div class="sg"><div class="sr"><span class="sl">DCF</span><span class="sv" id="v-pd"></span></div><input type="range" id="s-pd" min="0" max="1" step=".05" value=".6" oninput="u()"></div>
@@ -409,7 +409,7 @@ h+='</tbody></table>';
 const el=document.getElementById('sens'); if(el) el.innerHTML=h;
 }
 
-const DEFAULTS={'s-rf':.048,'s-erp':.042,'s-crp':.063,'s-bu':1.01,'s-sp':.025,'s-ev':.75,'s-sp2':.04,'s-me':12,'s-mr':3,'s-pd':.6,'s-pe':.3};
+const DEFAULTS={'s-rf':.045,'s-erp':.042,'s-crp':.063,'s-bu':1.01,'s-sp':.025,'s-ev':.75,'s-sp2':.04,'s-me':13,'s-mr':2,'s-pd':.6,'s-pe':.3};
 function resetSliders(){Object.entries(DEFAULTS).forEach(([id,v])=>{const el=document.getElementById(id);if(el){el.value=v;}});u();}
 
 function u(){
